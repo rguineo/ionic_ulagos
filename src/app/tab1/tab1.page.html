@@ -1,17 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <div class="barra-busqueda">
+      <ion-searchbar placeholder="¿A dónde quieres ir?"></ion-searchbar>
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card *ngFor="let destino of destinos">
+
+    <img alt="" src="{{ destino.imagen }}" />
+    <ion-card-header>
+      <ion-card-title>{{ destino.ciudad }}, {{ destino.pais }}</ion-card-title>
+      <ion-card-subtitle>{{ destino.zona }}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p>Fecha: {{ destino.fecha }}</p>
+      <p>Precio: {{ destino.precio }}</p>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
