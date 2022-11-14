@@ -1,12 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="favoritos">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Favoritos</ion-card-title>
+    </ion-card-header>
 
-<ion-content [fullscreen]="true">
-
-  Favoritos
+    <ion-card-content>
+      <ion-list *ngFor="let fav of favoritos">
+        
+        <ion-item class="item-fav">
+          <ion-thumbnail slot="start">
+            <img class="imagen-fav" src="{{ fav.imagen }}" />
+          </ion-thumbnail>
+          <ion-label>{{ fav.ciudad }}</ion-label>
+        </ion-item>
+        
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
