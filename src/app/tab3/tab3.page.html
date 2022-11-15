@@ -1,12 +1,28 @@
 <ion-content>
 
-  <h1>Viajes</h1>
+  <h1 class="titulo-viajes">Viajes</h1>
 
   <div class="aviso">
     <ion-icon name="hand-right-outline" class="icon-aviso"></ion-icon>
     <p class="msg1">Todavia no tienes ningún viaje reservado</p>
     <p class="msg2">Saca las maletas del clóset y comienza a planear tu próxima aventura</p>
 
-    <ion-button>Empieza a buscar</ion-button>
+    <ion-button class="boton-viajes" color="#8e2c2c">Empieza a buscar</ion-button>
   </div>
+
+  <h3 class="sub-titulo">Lugares donde estuviste</h3>
+  <br>
+  <ion-list lines="none" *ngFor="let visita of visitados">
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img class="img-viajes" src="{{ visita.imagen }}" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ visita.ciudad }}</h2>
+        <p>{{ visita.zona }}</p>
+        <p>{{ visita.fecha }}</p>
+      </ion-label>
+    </ion-item> 
+  </ion-list>
+
 </ion-content>
